@@ -58,6 +58,7 @@ We test our algorithm against standard state-of-the-art hidden population sample
 
 ## Future directions
 
+While a number of previous studies have focused on specific models for sampling, for example sampling using graph APIs or sampling using attributed search or sampling through keyword based search, we need to develop models that can use richer query models that exploits the usefulness of different models while considering the sampling cost tradeoffs. Nazi et al.'s [work](https://www.aaai.org/ocs/index.php/ICWSM/ICWSM15/paper/view/10577) is one of the poineering works in this direction. Furthermore, real world samplers suffer with the problem of inaccuracy from the classifiers, and missing and noisy information. A more robust sampling methodology is needed that can address the above problems. Furthermore, we could use the attributed search to not just sample hidden population nodes efficiently but also estimate properties of interest like distribution and correlation metrics in a sample efficient manner. A theoretical understanding of the problem hardness is currently missing. 
 
 ## Further Information
 

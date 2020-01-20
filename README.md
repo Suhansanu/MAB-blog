@@ -66,4 +66,4 @@ This blog is based on the paper, 'Hierarchical Multi-Armed Bandits for Discoveri
 Suhansanu Kumar, Heting Gao, Changyu Wang, Kevin Chen-Chuan Chang, Hari Sundaram
 2019 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining.
 
-The [paper](https://asonamdata.com/ASONAM2019_Proceedings/pdf/papers/021_0145_023.pdf) and [code]() are available. 
+The [paper](https://asonamdata.com/ASONAM2019_Proceedings/pdf/papers/021_0145_023.pdf) and [code](/code/) are available. 

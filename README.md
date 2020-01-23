@@ -42,9 +42,10 @@ We address the problem of combinatorial search space by hierarchically organizin
 ### Thompson (TMP) algorithm 
 
 [Thompson sampling](https://en.wikipedia.org/wiki/Thompson_sampling) is a heuristic for choosing queries that addresses the exploration and exploitation tradeoff. Given a set of queries, ![$q_1, q_2, \dots q_k$](https://render.githubusercontent.com/render/math?math=%24q_1%2C%20q_2%2C%20%5Cdots%20q_k%24)
-, it estimates the expected reward of observing hidden population entities on issuing each query. Based on the estimate, Thompson sampling chooses the query that maximizes the expected reward with respect to a randomly drawn belief. We estimate the reward of a query using the following equation which takes into account the API's black-box issues discussed above. 
+, it estimates the expected reward of observing hidden population entities on issuing each query. Based on the estimate, Thompson sampling chooses the query that maximizes the expected reward with respect to a randomly drawn belief. We estimate the reward of a query using the following equation which takes into account the API's black-box issues discussed above.
 
-![equation](https://render.githubusercontent.com/render/math?math=%5Cmathbb%7BE%7D%5Br_%7Bq%7D%5D%20%3D%20%5CBig(%20%5Cunderbrace%7B%5Cfrac%7BS_q%7D%7BS_q%20%2B%20F_q%7D%7D_%5Ctext%7Bexpected%20%5C%23%20targets%7D%20%5Ccdot%20%5Cunderbrace%7B%5Cfrac%7BN_q-n_q%7D%7BN_q%7D%7D_%5Ctext%7Bnew%7D%20%5Ccdot%20%5Cunderbrace%7B%5CBig(%201-%20%5Cbig(1%20-%20%5Cfrac%7B1%7D%7BN_q%7D%20%5Cbig)%5E%7Bm%7D%7D_%5Ctext%7Bunique%7D%20%5CBig))
+
+![e](https://render.githubusercontent.com/render/math?math=%5Cmathbb%7BE%7D%5Br_%7Bq%7D%5D%20%3D%20%5Cunderbrace%7B%5Cfrac%7BS_q%7D%7BS_q%20%2B%20F_q%7D%7D_%5Ctext%7Bexpected%20%5C%23%20targets%7D%20%5Ccdot%20%5Cunderbrace%7B%5Cfrac%7BN_q-n_q%7D%7BN_q%7D%7D_%5Ctext%7Bnew%7D%20%5Ccdot%20%5Cunderbrace%7B%5CBig(%201-%20%5Cbig(1%20-%20%5Cfrac%7B1%7D%7BN_q%7D%20%5Cbig)%5E%7Bm%7D%7D_%5Ctext%7Bunique%7D%20)
 
 
 

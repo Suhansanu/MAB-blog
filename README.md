@@ -72,7 +72,7 @@ While a number of previous studies have focused on specific models for sampling,
 
 ## Further Information
 
-This blog is based on the paper, 'Hierarchical Multi-Armed Bandits for Discovering Hidden Populations',
+This blog is based on the paper,
 
     @inproceedings{kumar2019hierarchical,
         title        = {Hierarchical multi-armed bandits for discovering hidden populations},

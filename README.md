@@ -74,12 +74,21 @@ While a number of previous studies have focused on specific models for sampling,
 
 This blog is based on the paper, 'Hierarchical Multi-Armed Bandits for Discovering Hidden Populations', 
 
-@inproceedings{kumar2019hierarchical,
+@misc{@inproceedings{kumar2019hierarchical,
   title={Hierarchical multi-armed bandits for discovering hidden populations},
   author={Kumar, Suhansanu and Gao, Heting and Wang, Changyu and Chang, Kevin Chen-Chuan and Sundaram, Hari},
-  booktitle={Proceedings of the 2019 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining},
-  pages={145--153},
+  
+  
   year={2019}
-}
+}}
+
+    @misc{kumar2019hierarchical,
+        title        = {Hierarchical multi-armed bandits for discovering hidden populations},
+        author       = {Kumar, Suhansanu and Gao, Heting and Wang, Changyu and Chang, Kevin Chen-Chuan and Sundaram, Hari},
+        booktitle    = {Proceedings of the 2019 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining},
+        pages        = {145--153},
+        year         = {2019}
+        }
+
 
 The [paper](https://asonamdata.com/ASONAM2019_Proceedings/pdf/papers/021_0145_023.pdf) and [code](/code/) are available. 

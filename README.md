@@ -45,8 +45,7 @@ We address the problem of combinatorial search space by hierarchically organizin
 , it estimates the expected reward of observing hidden population entities on issuing each query. Based on the estimate, Thompson sampling chooses the query that maximizes the expected reward with respect to a randomly drawn belief. We estimate the reward of a query using the following equation which takes into account the API's black-box issues discussed above.
 
 
-![e](https://render.githubusercontent.com/render/math?math=%5Cmathbb%7BE%7D%5Br_%7Bq%7D%5D%20%3D%20%5Cunderbrace%7B%5Cfrac%7BS_q%7D%7BS_q%20%2B%20F_q%7D%7D_%5Ctext%7Bexpected%20%5C%23%20targets%7D%20%5Ccdot%20%5Cunderbrace%7B%5Cfrac%7BN_q-n_q%7D%7BN_q%7D%7D_%5Ctext%7Bnew%7D%20%5Ccdot%20%5Cunderbrace%7B%5CBig(%201-%20%5Cbig(1%20-%20%5Cfrac%7B1%7D%7BN_q%7D%20%5Cbig)%5E%7Bm%7D%7D_%5Ctext%7Bunique%7D%20)
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{E}[r_{q}]&space;=&space;\underbrace{\frac{S_q}{S_q&space;&plus;&space;F_q}}_\text{expected&space;\&hash;&space;targets}&space;\cdot&space;\underbrace{\frac{N_q-n_q}{N_q}}_\text{new}&space;\cdot&space;\underbrace{\Big(&space;1-&space;\big(1&space;-&space;\frac{1}{N_q}&space;\big)^{m}}_\text{unique}&space;\Big)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{E}[r_{q}]&space;=&space;\underbrace{\frac{S_q}{S_q&space;&plus;&space;F_q}}_\text{expected&space;\&hash;&space;targets}&space;\cdot&space;\underbrace{\frac{N_q-n_q}{N_q}}_\text{new}&space;\cdot&space;\underbrace{\Big(&space;1-&space;\big(1&space;-&space;\frac{1}{N_q}&space;\big)^{m}}_\text{unique}&space;\Big)" title="\mathbb{E}[r_{q}] = \underbrace{\frac{S_q}{S_q + F_q}}_\text{expected \# targets} \cdot \underbrace{\frac{N_q-n_q}{N_q}}_\text{new} \cdot \underbrace{\Big( 1- \big(1 - \frac{1}{N_q} \big)^{m}}_\text{unique} \Big)" /></a>
 
 
 ### DT-TMP (Decision Tree Thompson) algorithm 

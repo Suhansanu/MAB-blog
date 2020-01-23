@@ -36,15 +36,25 @@ Next, we observe that Twitter's Application Programming Interface (API) acts as 
 <img src="/img/blackbox_results.png" width="600" height="250">
 
 
-We address the problem of combinatorial search space by hierarchically organizing the query space in the form of a tree. Then, we use a decision-tree based search strategy that exploits the correlation between queryable attributes and hidden property to systematically explore the query space by expanding along high yielding decision-tree branches. To this effect, we propose a new attributed search based sampler DT-TMP that combines decision tree and thompson sampling to efficiently sample hidden populations from online social networks.
+We address the problem of combinatorial search space by hierarchically organizing the query space in the form of a tree. Then, we use a decision-tree based search strategy that exploits the correlation between queryable attributes and hidden property to systematically explore the query space by expanding along high yielding decision-tree branches. To this effect, we propose a new attributed search based sampler DT-TMP that combines decision tree and thompson sampling to efficiently sample hidden populations from online social networks. Next, we describe the Thompson sampler followed by decision tree Thompson sampler. 
 
-### DT-TMP algorithm 
+
+### Thompson (TMP) algorithm 
+
+[Thompson sampling](https://en.wikipedia.org/wiki/Thompson_sampling) is a heuristic for choosing queries that addresses the exploration and exploitation tradeoff. Given a set of queries, ![$q_1, q_2, \dots q_k$](https://render.githubusercontent.com/render/math?math=%24q_1%2C%20q_2%2C%20%5Cdots%20q_k%24)
+, it estimates the expected reward of observing hidden population entities on issuing each query. Based on the estimate, Thompson sampling chooses the query that maximizes the expected reward with respect to a randomly drawn belief. We estimate the reward of a query using the following equation which takes into account the API's black-box issues discussed above. 
+
+![\mathbb{E}\[r_{q}\] = \Big( \underbrace{\frac{S_q}{S_q + F_q}}_\text{expected \# targets} \cdot \underbrace{\frac{N_q-n_q}{N_q}}_\text{new} \cdot \underbrace{\Big( 1- \big(1 - \frac{1}{N_q} \big)^{m}}_\text{unique} \Big)](https://render.githubusercontent.com/render/math?math=%5Cmathbb%7BE%7D%5Br_%7Bq%7D%5D%20%3D%20%5CBig(%20%5Cunderbrace%7B%5Cfrac%7BS_q%7D%7BS_q%20%2B%20F_q%7D%7D_%5Ctext%7Bexpected%20%5C%23%20targets%7D%20%5Ccdot%20%5Cunderbrace%7B%5Cfrac%7BN_q-n_q%7D%7BN_q%7D%7D_%5Ctext%7Bnew%7D%20%5Ccdot%20%5Cunderbrace%7B%5CBig(%201-%20%5Cbig(1%20-%20%5Cfrac%7B1%7D%7BN_q%7D%20%5Cbig)%5E%7Bm%7D%7D_%5Ctext%7Bunique%7D%20%5CBig))
+
+
+
+### DT-TMP (Decision Tree Thompson) algorithm 
 
 ![model](/img/model.png)
 
 We show the workings of the DT-TMP algorithm through an illustrative example shown above. For hidden population of 'mental illness' (represented in red color), the DT-TMP searches the population for the best combinatorial query comprising of two queryable attributes: income and age. It first uses <*, *> query to find the best single attributed query from queries such as <Low, *> and <*, Young>. Subsequently, it finds the best query <Low, *> along which it expands its query search. The decision tree on the right shows the query expansion with the query expansion along green links. 
 
-In summary, DT-TMP mantains an estimate of discovering number of hidden population entities for each query. It uses a Thompson sampling framework to address the exploration and exploitation tradeoff. Furthermore, DT-TMP organizes the query in a tree fashion where general queries are near the root and specific queries are near the leaf. This organization allows DT-TMP to reject poor yielding branches or poor yielding queries (exploiting the correlation between attributes and hidden property) and greedily exploit the high yielding branches. 
+In summary, DT-TMP mantains an estimate of discovering number of hidden population entities for each query. It uses a [Thompson sampling](https://link.springer.com/chapter/10.1007/978-3-642-34106-9_18) framework to address the exploration and exploitation tradeoff. Furthermore, DT-TMP organizes the query in a tree fashion where general queries are near the root and specific queries are near the leaf. This organization allows DT-TMP to reject poor yielding branches or poor yielding queries (exploiting the correlation between attributes and hidden property) and greedily exploit the high yielding branches. 
 
 
 
@@ -64,8 +74,12 @@ While a number of previous studies have focused on specific models for sampling,
 
 This blog is based on the paper, 'Hierarchical Multi-Armed Bandits for Discovering Hidden Populations', 
 
-Suhansanu Kumar, Heting Gao, Changyu Wang, Kevin Chen-Chuan Chang, Hari Sundaram
-
-2019 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining.
+@inproceedings{kumar2019hierarchical,
+  title={Hierarchical multi-armed bandits for discovering hidden populations},
+  author={Kumar, Suhansanu and Gao, Heting and Wang, Changyu and Chang, Kevin Chen-Chuan and Sundaram, Hari},
+  booktitle={Proceedings of the 2019 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining},
+  pages={145--153},
+  year={2019}
+}
 
 The [paper](https://asonamdata.com/ASONAM2019_Proceedings/pdf/papers/021_0145_023.pdf) and [code](/code/) are available. 
